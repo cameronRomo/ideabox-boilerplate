@@ -8,15 +8,19 @@
   </head>
   <body class="purple-1">
     <section class="menu purple-4">
-      <nav class="navigation">
-        <img class="menu-open" src="assets/menu.svg" alt="menu">
-        <img class="menu-close" src="assets/menu-close.svg" alt="menu-close"/>
-        <h1 class="header-text">IdeaBox</h1>
+      <article class="banner-1">
+        <nav class="navigation">
+          <div class="banner">
+            <img class="menu-open" src="assets/menu.svg" alt="menu">
+            <img class="menu-close hidden" src="assets/menu-close.svg" alt="menu-close"/>
+          </div>
+          <h1 class="header-text">IdeaBox</h1>
+        </nav>
         <section class="open-menu hidden">
           <h3 class="filter-card">Filter Starred Ideas</h3>
           <button class="button-show-starred">Show Starred Ideas</button>
         </section>
-      </nav>
+      </article>
     </section>
     <main class="ideas">
       <section class="idea-form purple-2">
@@ -31,14 +35,14 @@
         </div>
       </section>
       <section class="idea-cards">
-        <article class="card card-1">
+        <article class="card card-left">
           <section class="card-banner-top">
             <img class="banner-star" src="assets/star-active.svg" alt="card-star-icon">
             <img class="banner-x" src="assets/delete.svg" alt="card-delete-icon">
           </section>
           <section class="card-content">
-            <h2>Idea title</h2>
-            <h2>Idea body</h2>
+            <h2 class="card-title">Idea title</h2>
+            <h2 class="card-body">Idea body</h2>
           </section>
           <section class="card-footer">
             <img src="assets/comment.svg" alt="icon-comment">
@@ -51,11 +55,39 @@
             <img class="banner-x" src="assets/delete.svg" alt="card-delete-icon">
           </section>
           <section class="card-content">
-            <h2>Idea title</h2>
-            <h2>Idea body</h2>
+            <h2 class="card-title">Idea title</h2>
+            <h2 class="card-body">Idea body</h2>
           </section>
           <section class="card-footer">
             <img id="icon-comment" src="assets/comment.svg" alt="icon-comment">
+            <h3 class="comment-text">Comment</h3>
+          </section>
+        </article>
+        <article class="card card-right">
+          <section class="card-banner-top">
+            <img class="banner-star" src="assets/star-active.svg" alt="card-star-icon">
+            <img class="banner-x" src="assets/delete.svg" alt="card-delete-icon">
+          </section>
+          <section class="card-content">
+            <h2 class="card-title">Idea title</h2>
+            <h2 class="card-body">Idea body</h2>
+          </section>
+          <section class="card-footer">
+            <img src="assets/comment.svg" alt="icon-comment">
+            <h3 class="comment-text">Comment</h3>
+          </section>
+        </article>
+        <article class="card card-left">
+          <section class="card-banner-top">
+            <img class="banner-star" src="assets/star-active.svg" alt="card-star-icon">
+            <img class="banner-x" src="assets/delete.svg" alt="card-delete-icon">
+          </section>
+          <section class="card-content">
+            <h2 class="card-title">Idea title</h2>
+            <h2 class="card-body">Idea body</h2>
+          </section>
+          <section class="card-footer">
+            <img src="assets/comment.svg" alt="icon-comment">
             <h3 class="comment-text">Comment</h3>
           </section>
         </article>
@@ -65,8 +97,8 @@
             <img class="banner-x" src="assets/delete.svg" alt="card-delete-icon">
           </section>
           <section class="card-content">
-            <h2>Idea title</h2>
-            <h2>Idea body</h2>
+            <h2 class="card-title">Idea title</h2>
+            <h2 class="card-body">Idea body</h2>
           </section>
           <section class="card-footer">
             <img src="assets/comment.svg" alt="icon-comment">
