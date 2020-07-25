@@ -9,6 +9,7 @@ html, body {
   height: 100%;
 }
 
+
 body {
   display: flex;
 }
@@ -112,6 +113,7 @@ body {
   margin-bottom: 2%;
 }
 
+
 .search {
   display: flex;
   flex-direction: row;
@@ -140,7 +142,8 @@ body {
   grid-column-gap: 1rem;
 }
 
-/* .card-body {
+/* 
+.card-body {
   padding: 2%;
 }
 
