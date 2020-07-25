@@ -129,9 +129,8 @@ body {
 }
 
 .input-search {
-  height: 10px;
+  height: 20px;
   width: 95%;
-  padding: 2%;
 }
 
 .idea-cards {
@@ -142,12 +141,11 @@ body {
   grid-column-gap: 1rem;
 }
 
-/* 
 .card-body {
-  padding: 2%;
+  font-weight: 300;
 }
 
-.card-title {
+/* .card-title {
   padding: 2%;
 } */
 
@@ -175,7 +173,7 @@ body {
 
 .card-footer {
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   background-color: #5357A5;
   color: #E9E9F3;
 }
@@ -239,7 +237,6 @@ body {
   }
 
   .shadow {
-    background: black;
     opacity: .25;
   }
 
@@ -287,8 +284,25 @@ body {
     margin-right: 1rem;
   }
 
+  .navigation {
+    display: flex;
+    justify-content: flex-start;
+  }
+
   .menu {
-    width: 10rem;
+    width: 15rem;
+    height: 100%;
+  }
+
+  .open-menu {
+    display: block;
+    border-top: #353567;
+    border-bottom: #353567;
+    border-style: solid;
+  }
+
+  .menu-open {
+    display: none;
   }
 
   .card img {
