@@ -51,15 +51,9 @@ function createCard() {
   }
 };
 
-// ***BUG*** apply margin on the entire on parent container? Margins Don't match when new card is created
-// ***BUG*** Card margin needs to wrap text below and not increase width of card.
-// clearTemplates();
-// potentially research the difference in wrapping the input fields in a form class
-// potentially research the differenct in a submit button vs a regular button
-
 function displayCard(title, body) {
   clearTemplates();
-  var additionalCard = "";
+  var additionalCard;
   for (var i = 0; i < ideas.length; i++) {
     additionalCard =
     `<article class="card">
@@ -78,8 +72,36 @@ function displayCard(title, body) {
     </article>`;
     sectionIdeaCards.innerHTML += additionalCard;
   }
+  clearInputs()
 };
 
 function clearTemplates() {
   sectionIdeaCards.innerHTML = '';
 };
+
+function clearInputs() {
+  inputBody.value = '';
+  inputTitle.value = '';
+}
+
+
+
+// ***BUG*** apply margin on the entire on parent container? Margins Don't match when new card is created
+// ***BUG*** Card margin needs to wrap text below and not increase width of card.
+// clearTemplates();
+// potentially research the difference in wrapping the input fields in a form class
+// potentially research the differenct in a submit button vs a regular button
+
+// Notes on displayCard
+// - taking two parameters title and body
+// - clearTemplates() remove our inner HTML for the sectionIdeaCards which
+// clears
+// - Iterating through ideas card array and creating a new idea object
+// - Inserting HTML and invoking  the display in the createCard function
+// - This then pushes the new idea object into the array of idea
+
+// - displayCard() function explanation
+// - take to parameter title and body which are defined in the createCard function
+// both input field
+// - clearTemplates() removes innerHTML of existing template idea cards which clears
+// each card from the DOM
