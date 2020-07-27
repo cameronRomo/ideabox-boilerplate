@@ -144,7 +144,7 @@ body {
 .card-body {
   font-weight: 300;
 }
-
+/* OVERFLOW CSS ATTRIBUTE */
 /* .card-title {
   padding: 2%;
 } */
@@ -184,6 +184,7 @@ body {
   align-self: center;
 }
 
+/* over flow */
 /* #icon-comment {
 } */
 /* .banner-star {
