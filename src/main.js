@@ -9,6 +9,7 @@ var inputTitle = document.querySelector('.input-title');
 var inputBody = document.querySelector('.input-body');
 var sectionIdeaCards = document.querySelector('.idea-cards');
 
+
 var ideas = [];
 
 /////////////// event listeners ///////////////
@@ -16,6 +17,8 @@ var ideas = [];
 buttonMenu.addEventListener('click', toggleMenu);
 menuClose.addEventListener('click', displayBack);
 buttonSave.addEventListener('click', createCard);
+inputTitle.addEventListener('keydown', disableSaveButton);
+inputBody.addEventListener('keydown', disableSaveButton);
 
 //possible anonymous function for createCard
 
@@ -45,11 +48,11 @@ function displayOff() {
 function createCard() {
   var title = inputTitle.value;
   var body = inputBody.value;
-  if (!(title === '' || body === '')) {
+  if (!(title === '' || body === '')) { // this might be superflous
     var userCard = new Idea(title, body);
     ideas.push(userCard);
     displayCard(title, body);
-  } 
+  }
 };
 
 function displayCard(title, body) {
@@ -74,6 +77,7 @@ function displayCard(title, body) {
     sectionIdeaCards.innerHTML += additionalCard;
   }
   clearInputs()
+  disableSaveButton(event)
 };
 
 function clearTemplates() {
@@ -85,6 +89,14 @@ function clearInputs() {
   inputTitle.value = '';
 }
 
+function disableSaveButton(event) {
+  if (event.target.parentNode.childNodes[3].value !== ''
+  && event.target.parentNode.childNodes[7].value !== '') {
+    buttonSave.disabled = false;
+  } else {
+    buttonSave.disabled = true;
+  }
+}
 
 // ***BUG*** apply margin on the entire on parent container? Margins Don't match when new card is created
 // ***BUG*** Card margin needs to wrap text below and not increase width of card.
