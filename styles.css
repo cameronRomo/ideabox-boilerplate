@@ -111,8 +111,12 @@ body {
 .button-save {
   padding: 2%;
   margin-bottom: 2%;
+  cursor: pointer;
 }
 
+.button-save[disabled] {
+  cursor: default;
+}
 
 .search {
   display: flex;

@@ -8,7 +8,7 @@ var buttonSave = document.querySelector('.button-save');
 var inputTitle = document.querySelector('.input-title');
 var inputBody = document.querySelector('.input-body');
 var sectionIdeaCards = document.querySelector('.idea-cards');
-
+var input = document.querySelectorAll("input")
 
 var ideas = [];
 
@@ -90,13 +90,16 @@ function clearInputs() {
 }
 
 function disableSaveButton(event) {
-  if (event.target.parentNode.childNodes[3].value !== ''
-  && event.target.parentNode.childNodes[7].value !== '') {
+  for (var i = 0; i < input.length - 1; i++) {
+    if (input[i].value !== ''
+  && input[i].value !== '') {
     buttonSave.disabled = false;
   } else {
     buttonSave.disabled = true;
+    }
   }
 }
+
 
 // ***BUG*** apply margin on the entire on parent container? Margins Don't match when new card is created
 // ***BUG*** Card margin needs to wrap text below and not increase width of card.
