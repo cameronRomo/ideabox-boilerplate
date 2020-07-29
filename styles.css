@@ -81,12 +81,14 @@ body {
 
 .filter-card {
   color: #BFBFDD;
-  padding-bottom: 3%;
+  /* padding-bottom: 5%; */
   margin: 2%;
+  padding: 5% 0% 5% 0%;
+  /* padding-top: 5%; */
 }
 
 .button-show-starred {
-  background-color: #353567;
+  background-color: #5356A4;
   border-style: none;
   width: 96%;
   padding: 3%;
@@ -112,10 +114,13 @@ body {
   padding: 2%;
   margin-bottom: 2%;
   cursor: pointer;
+  background-color: #353567;
+  color: #E9E9F3;
 }
 
 .button-save[disabled] {
   cursor: default;
+  opacity: 40%;
 }
 
 .search {
@@ -143,6 +148,7 @@ body {
   display: grid;
   grid-template-columns: 80%;
   grid-column-gap: 1rem;
+  padding: 2%;
 }
 
 .card-body {
@@ -155,7 +161,7 @@ body {
 
 .card {
   display: grid;
-  grid-template-columns:
+  grid-template-columns: 1;
   padding-bottom: 2rem;
   border: 0.2rem solid grey;
   border-style: double;
@@ -301,9 +307,9 @@ body {
 
   .open-menu {
     display: block;
-    border-top: #353567;
-    border-bottom: #353567;
-    border-style: solid;
+    border-bottom: 2px solid #353567;
+    border-top: 2px solid #353567;
+    padding: 5% 7% 8%;
   }
 
   .menu-open {
