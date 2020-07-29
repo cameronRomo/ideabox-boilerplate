@@ -24,8 +24,12 @@ inputTitle.addEventListener('keydown', disableSaveButton);
 inputBody.addEventListener('keydown', disableSaveButton);
 sectionIdeaCards.addEventListener('click', function(event) {
   if (event.target.classList.contains('banner-star')) {
-    toggleStar();
+    favoriteStar();
   }
+
+  // if (event.target.src == "assets/star-active.svg") {
+  //   event.target.src = "assets/star.svg"
+  // }
 
   if (event.target.classList.contains('banner-x')) {
     deleteCard(event);
@@ -35,25 +39,35 @@ sectionIdeaCards.addEventListener('click', function(event) {
 
 /////////////// iteration 0 ///////////////
 
-function toggleStar() {
-  if (event.target.dataset.id = "empty-star") {
-    event.target.src="assets/star-active.svg";
-  } else if (event.target.dataset.id = "favorited-star") {
-     event.target.src="assets/star.svg"
+function favoriteStar() {
+  var indexNumber = event.target.id.split('-')[1];
+  for (var i = 0; i < ideas.length; i++) {
+    if (i == indexNumber) {
+      event.target.src="assets/star-active.svg";
+      ideas[i].star = true;
+    }
   }
-
-  // if (event.target.dataset.id = "favorited-star") {
-  //   event.target.src="assets/star.svg"
-  // }
 };
 
-function deleteCard(event) {
-  // for loop
-  if (event.target.dataset.id = "x") {
-    event.target.parentElement.parentElement.remove();
-  }
-}
+// function unfavoriteStar() {
+//   var indexNumber = event.target.id.split('-')[1];
+//   for (var i = 0; i < ideas.length; i++) {
+//     if (i == indexNumber) {
+//       event.target.src="assets/star.svg";
+//       ideas[i].star = false;
+//     }
+//   }
+// };
 
+function deleteCard(event) {
+  var indexNumber = event.target.id.split('-')[1];
+  for (var i = 0; i < ideas.length; i++) {
+    if (i == indexNumber) {
+      ideas.splice(indexNumber, 1);
+      event.target.parentElement.parentElement.remove();
+    }
+  }
+};
 
 function toggleMenu() {
   displayOff();
@@ -93,6 +107,7 @@ function displayCard(title, body) {
     additionalCard =
     `<article class="card" id="card-${i}">
       <section class="card-banner-top">
+        <img class="banner-star hidden" id="card-${i}" data-id="favorite-star" type="button" src="assets/star-active.svg" alt="card-star-icon">
         <img class="banner-star" id="card-${i}" data-id="empty-star" type="button" src="assets/star.svg" alt="card-star-icon">
         <img class="banner-x" id="card-${i}" data-id="x" src="assets/delete.svg" alt="card-delete-icon">
       </section>
