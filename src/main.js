@@ -9,6 +9,9 @@ var inputTitle = document.querySelector('.input-title');
 var inputBody = document.querySelector('.input-body');
 var sectionIdeaCards = document.querySelector('.idea-cards');
 var input = document.querySelectorAll("input")
+var star = document.querySelector('.banner-star');
+var card = document.querySelector('.card');
+// var sectionBanner = document.querySelector('.card-banner-top');
 
 var ideas = [];
 
@@ -19,10 +22,38 @@ menuClose.addEventListener('click', displayBack);
 buttonSave.addEventListener('click', createCard);
 inputTitle.addEventListener('keydown', disableSaveButton);
 inputBody.addEventListener('keydown', disableSaveButton);
+sectionIdeaCards.addEventListener('click', function(event) {
+  if (event.target.classList.contains('banner-star')) {
+    toggleStar();
+  }
 
+  if (event.target.classList.contains('banner-x')) {
+    deleteCard(event);
+  }
+});
 //possible anonymous function for createCard
 
 /////////////// iteration 0 ///////////////
+
+function toggleStar() {
+  if (event.target.dataset.id = "empty-star") {
+    event.target.src="assets/star-active.svg";
+  } else if (event.target.dataset.id = "favorited-star") {
+     event.target.src="assets/star.svg"
+  }
+
+  // if (event.target.dataset.id = "favorited-star") {
+  //   event.target.src="assets/star.svg"
+  // }
+};
+
+function deleteCard(event) {
+  // for loop
+  if (event.target.dataset.id = "x") {
+    event.target.parentElement.parentElement.remove();
+  }
+}
+
 
 function toggleMenu() {
   displayOff();
@@ -60,10 +91,10 @@ function displayCard(title, body) {
   var additionalCard;
   for (var i = 0; i < ideas.length; i++) {
     additionalCard =
-    `<article class="card">
+    `<article class="card" id="card-${i}">
       <section class="card-banner-top">
-        <img class="banner-star" src="assets/star.svg" alt="card-star-icon">
-        <img class="banner-x" src="assets/delete.svg" alt="card-delete-icon">
+        <img class="banner-star" id="card-${i}" data-id="empty-star" type="button" src="assets/star.svg" alt="card-star-icon">
+        <img class="banner-x" id="card-${i}" data-id="x" src="assets/delete.svg" alt="card-delete-icon">
       </section>
       <section class="card-content">
         <h2 class="card-title">${ideas[i].title}</h2>
@@ -99,6 +130,35 @@ function disableSaveButton(event) {
     }
   }
 }
+
+// function fillStar(event) {
+//   var filledStar;
+//   sectionIdeaCards.innerHTML = '';
+//   // for (var i = 0; i < ideas.length; i++) {
+//     if (event.target.classList.contains('banner-star')) {
+//       console.log('hi');
+//       filledStar =
+//         `<article class="card">
+//           <section class="card-banner-top">
+//             <img class="banner-star" src="assets/star-active.svg" alt="card-star-icon">
+//             <img class="banner-x" src="assets/delete.svg" alt="card-delete-icon">
+//           </section>
+//           <section class="card-content">
+//             <h2 class="card-title">${ideas[i].title}</h2>
+//             <h2 class="card-body">${ideas[i].body}</h2>
+//           </section>
+//           <section class="card-footer">
+//             <img src="assets/comment.svg" alt="icon-comment">
+//             <h3 class="comment-text">Comment</h3>
+//           </section>
+//         </article>`;
+//         sectionIdeaCards.innerHTML += filledStar;
+//       }
+//     // }
+//   };
+
+
+//can't get the event to fire .. does it have something to do with img vs button?
 
 
 // ***BUG*** apply margin on the entire on parent container? Margins Don't match when new card is created
