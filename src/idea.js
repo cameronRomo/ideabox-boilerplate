@@ -7,7 +7,11 @@ class Idea {
   }
 
   saveToStorage(ideaCard) {
+    console.log('hello');
     //one job: save instance to storage
+    //toggle this.star = true and this.star = false
+    //call function onclick
+      //return this.star = true
     //stringify
   }
 
