@@ -32,6 +32,38 @@ Mobile Layout (Media specs here i. e. 400px)
 
 # Progression
 
+**Iteration 0 Mobile Layout**
+
+* This iteration set the page up, using HTML and CSS, to match a comp for mobile users.
+!(Idea Box Mobile View)[picture]
+
+**Iteration 1 Desktop Layout**
+
+* The fundamental goal of iteration 1 was to set the page up to so that it is "responsive".
+* To achieve the goal of iteration one, the developers implemented a media query, which required a fundamental understanding of how it works within css.
+!(Idea Box Desktop View)[Picture]
+
+**Iteration 2 Adding Ideas**
+
+* Iteration 2 posed a series of goals related to the user being able to add their ideas.
+
+This meant:
+
+* Being able to see a new Idea card with the user title and body appear after the save is clicked.
+* Clearing the input fields for title and body after save.
+* Disabling the button if one or both input fields are empty.
+* No Page reload after the save is clicked.
+
+**Iteration 3 Favoriting & Deleting Ideas**
+
+* The goals here regarded giving the user a favoriting and deleting option on their idea card(s).
+
+This required:
+
+* Permanently removing card from view after a click on the 'x' icon.
+* When the star icon is clicked, it is filled in and the card is considered favorited.
+* No page reload after the save is clicked.
+
 # Wins
 
 * The delete functionality on each idea card allows the user to click on the card's 'x' to delete the card from view.  This win taught us how to use event delegation, where the naturally-existing parent element listens for events on its dynamically-created children.  In this case, we were able to add an event listener to the parent element(sectionIdeaCards) that would be fired when the 'x' is clicked by the user.  We learned how to use `parentElement.remove()`, which is a method called on the `target`.  When this method is called on the target, the grandparent element, and all of its contents, is removed from view.  Furthermore, we used the `splice()` method within this function to remove the targeted card from `ideas[]`, which is referenced when displaying the user's cards.  As we have it, the DOM is being updated with the card's removal, part of the data model is reflecting that change, and the existing cards shift ahead in position when a card is removed from a display of two or more ideas.  Overcoming the obstacle that is event delegation, from conceptual understanding, to syntax, to implementation, was a tremendous learning process that led to a satisfying outcome.
@@ -40,7 +72,7 @@ Mobile Layout (Media specs here i. e. 400px)
 
 * The CSS.  Our group has taken the opportunity to experiment with flex-box and grid since day one of this journey.  We initially set up our HTML file with classes to be referenced in the stylesheet.  It took some time for us to realize that the grid and all of its associated properties need to be stated in the container, rather than on the element for which the style should appear.  Also, figuring out which units of measure to use for various elements posed a problem for us when it came to responsive design.  We often wondered why our search icon scaled with the page, or why it would stay a fixed height and width.  We realized that when using percentages, that element would always consume the specified percentage of the container in which it lives, no matter how large or small that container may be.  In our next project, we intend to utilize our units of measure more precisely to match their most desirable purpose.  This could reduce our time spent adjusting the size/relationship of elements and would allow us to point our energy in a different direction.  
 
-#Next Steps
+# Next Steps
 
 *   As of now, if a star is clicked(favorited) and the user saved a new idea card from the form's inputs, the aforementioned card will no longer have a favorited, red star.  It will return to its natural state, which is the outline star.  We plan to update the data model with these changes, so that the favorited card will appear favorited when new cards are added.
 
